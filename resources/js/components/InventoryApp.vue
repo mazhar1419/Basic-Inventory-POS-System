@@ -13,6 +13,7 @@
       <button :class="{active: tab==='purchases'}" @click="tab='purchases'">Purchases</button>
       <button :class="{active: tab==='damages'}" @click="tab='damages'">Damage / Write-off</button>
       <button :class="{active: tab==='customers'}" @click="tab='customers'">Customers</button>
+      <button :class="{active: tab==='suppliers'}" @click="tab='suppliers'">Suppliers</button>
       <button :class="{active: tab==='reports'}" @click="tab='reports'">Reports</button>
     </nav>
 
@@ -30,11 +31,12 @@ import PosDashboard from './pos/PosDashboard.vue'
 import PurchaseList from './purchases/PurchaseList.vue'
 import DamageList from './damages/DamageList.vue'
 import CustomerList from './customers/CustomerList.vue'
+import SupplierList from './suppliers/SupplierList.vue'
 import ReportsPage from './reports/ReportsPage.vue'
 
 export default {
   name: 'InventoryApp',
-  components: { ProductList, PosDashboard, PurchaseList, DamageList, CustomerList, ReportsPage },
+  components: { ProductList, PosDashboard, PurchaseList, DamageList, CustomerList, ReportsPage, SupplierList},
   data() { return { tab: 'products' } },
   computed: {
     currentComponent() {
@@ -44,6 +46,7 @@ export default {
         purchases: 'PurchaseList',
         damages: 'DamageList',
         customers: 'CustomerList',
+        suppliers: 'SupplierList',
         reports: 'ReportsPage'
       }[this.tab]
     }
