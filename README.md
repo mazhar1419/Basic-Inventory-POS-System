@@ -215,51 +215,68 @@ Damage by product
 └── README.md
 ```
 
-🛠️ Installation & Setup Guide
+---
+
+## 🛠️ Installation & Setup Guide
+
 Follow these steps to get a development environment up and running.
 
-Prerequisites
+### Prerequisites
+
 Ensure you have the following installed on your system:
 
-PHP (version 8.x recommended)
+* **PHP** (version 8.x recommended)
+* **Composer**
+* **Node.js & npm**
+* **Git**
 
-Composer
+### 1. Repository Setup
 
-Node.js & npm
+Clone the repository and navigate into the project directory.
 
-Git
-
-1. Clone Repo
+```bash
 # Clone the repository
 git clone your-repo-url
 
 # Navigate into the project folder
 cd project-folder
 
-2. Backend Setup
-Command Type,Command
-Shell,composer install
-Shell,cp .env.example .env
-Shell,php artisan key:generate
+# Clone the repository
+git clone your-repo-url
 
-3. Migrate
-Command Type,Command
-Shell,php artisan migrate
+# Navigate into the project folder
+cd project-folder
 
-4. Create Admin User
-Command Type,Command
-Shell,php artisan tinker
-Tinker,User::factory()->create();
-Tinker,exit
+# Install PHP dependencies
+composer install
 
-5. Frontend Setup
-Command Type,Command
-Shell,npm install
-Shell,npm run dev
+# Copy the example environment file to .env
+cp .env.example .env
 
-6. Start Server
-Command Type,Command
-Shell,php artisan serve
+# Generate the application encryption key
+php artisan key:generate
+
+# Run database migrations
+php artisan migrate
+
+# Start the Tinker console
+php artisan tinker
+
+// Create a new user (Note: You may need to specify fields like 'email' and 'password'
+// based on your UserFactory definition. Check database/factories/UserFactory.php)
+User::factory()->create();
+
+// Exit the Tinker console
+exit
+
+# Install Node/NPM dependencies
+npm install
+
+# Compile assets and watch for changes in development mode
+npm run dev
+
+# Start the development server (usually runs on http://127.0.0.1:8000)
+php artisan serve
 
 🧪 API Endpoints
 Products
