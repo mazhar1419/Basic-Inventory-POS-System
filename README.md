@@ -1,8 +1,14 @@
-<h1 align="center">📦 Inventory & POS System (Laravel 12 + Vue 3)</h1>
-<p align="center">A lightweight but powerful business management system built with modern Laravel + Vue.</p> <p align="center"> <a href="https://github.com/mazhar1419">GitHub</a> • <a href="https://www.linkedin.com/in/mazhar1419">LinkedIn</a> • <a href="https://www.reddit.com/user/doanldPutjonginTrump/">Reddit</a> </p>
+📦 Inventory & POS System (Laravel 12 + Vue 3)
+==============================================
+
+A lightweight but powerful business management system built with modern Laravel + Vue.
+
+[GitHub](https://github.com/mazhar1419) • [LinkedIn](https://www.linkedin.com/in/mazhar1419) • [Reddit](https://www.reddit.com/user/doanldPutjonginTrump/)
+
 🚀 Overview
 
 This is a modern Inventory, Purchase, POS, Customer, Supplier & Reporting System crafted using Laravel 12 + Vue 3.
+
 Built clean, modular, scalable — suitable for small/medium business operations.
 
 Includes:
@@ -92,15 +98,16 @@ Record quantity + note
 Stock auto-updated
 
 📊 Reports Module
-1. Sales by Date
+
+1\. Sales by Date
 
 Filter by date range
 
 Group by day
 
-CSV export (date, sales_count, total_amount, total_paid)
+CSV export (date, sales\_count, total\_amount, total\_paid)
 
-2. Stock Report
+2\. Stock Report
 
 Summary of all product stock
 
@@ -108,7 +115,7 @@ Low-stock filter
 
 CSV export
 
-3. Product-Based Reports (recommended extension)
+3\. Product-Based Reports (recommended extension)
 
 Sales by product
 
@@ -119,99 +126,163 @@ Damages by product
 Show all if product not selected
 
 📁 Project Structure
+
 resources/
-  js/
-    components/
-      InventoryApp.vue
-      products/
-      purchases/
-      pos/
-      reports/
-      customers/
-      suppliers/
-      damages/
-  views/
-    app.blade.php
+
+js/
+
+components/
+
+InventoryApp.vue
+
+products/
+
+purchases/
+
+pos/
+
+reports/
+
+customers/
+
+suppliers/
+
+damages/
+
+views/
+
+app.blade.php
 
 app/
-  Http/
-    Controllers/
-      Api/
-        ProductController.php
-        SaleController.php
-        PurchaseController.php
-        ReportController.php
-        SupplierController.php
-        CustomerController.php
-        DamageController.php
-      Auth/
-        LoginController.php
 
-  Models/
-    User.php
-    Product.php
-    Sale.php
-    SaleItem.php
-    Purchase.php
-    PurchaseItem.php
-    Supplier.php
-    Customer.php
-    Damage.php
+Http/
+
+Controllers/
+
+Api/
+
+ProductController.php
+
+SaleController.php
+
+PurchaseController.php
+
+ReportController.php
+
+SupplierController.php
+
+CustomerController.php
+
+DamageController.php
+
+Auth/
+
+LoginController.php
+
+Models/
+
+User.php
+
+Product.php
+
+Sale.php
+
+SaleItem.php
+
+Purchase.php
+
+PurchaseItem.php
+
+Supplier.php
+
+Customer.php
+
+Damage.php
 
 database/
-  migrations/
-  factories/
+
+migrations/
+
+factories/
 
 ⚙️ Installation Guide
-1. Clone Repository
+
+1\. Clone Repository
+
 git clone your-repo-url
+
 cd project-folder
 
-2. Backend Setup
-composer install
-cp .env.example .env
-php artisan key:generate
+2\. Backend Setup
 
+composer install
+
+cp .env.example .env
+
+php artisan key:generate
 
 Configure your database in .env.
 
-3. Migrate
+3\. Migrate
+
 php artisan migrate
 
-4. Seed Default Admin
+4\. Seed Default Admin
+
 php artisan tinker
+
 User::factory()->create();
 
-5. Frontend Setup
+5\. Frontend Setup
+
 npm install
+
 npm run dev
 
-6. Start Server
+6\. Start Server
+
 php artisan serve
 
 🔑 Default Login
-Email	Password
+
+EmailPassword
+
 admin@mail.com
-	admin123
+
+admin123
+
 🧪 API Endpoints
+
 Products
-GET    /api/products
-POST   /api/products
-PUT    /api/products/{id}
+
+GET /api/products
+
+POST /api/products
+
+PUT /api/products/{id}
+
 DELETE /api/products/{id}
 
 Sales (POS)
+
 POST /api/sales
-GET  /api/sales
+
+GET /api/sales
 
 Purchases
+
 POST /api/purchases
-GET  /api/purchases
+
+GET /api/purchases
 
 Reports
+
 GET /api/reports/sales-by-date
+
 GET /api/reports/sales-by-date-export
+
 GET /api/reports/stock
+
 GET /api/reports/stock-export
 
 🧱 Technical Notes
@@ -251,4 +322,5 @@ PWA (offline support)
 ❤️ Credits & Author
 
 Developed by Mazharul Islam with AI assistance.
+
 Clean architecture, scalable modules, and real-world usability.
