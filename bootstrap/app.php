@@ -12,7 +12,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+       $middleware->alias([
+            // Laravel's built-in 'auth' and 'guest' aliases are already defined here...
+            'auth' => \App\Http\Middleware\EnsureAuthenticated::class, // <-- ADD THIS LINE
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
