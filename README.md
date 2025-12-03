@@ -215,65 +215,61 @@ Damage by product
 └── README.md
 ```
 
-📦 File Details Table
-No.	File / Folder	Description
-1	app/	Laravel application core
-2	Controllers/Api	Handles all API logic
-3	Models/	Eloquent ORM models
-4	database/migrations	DB structure definitions
-5	resources/js/components/	Vue 3 components
-6	resources/views/app.blade.php	Main blade entry
-7	public/	Public assets + index.php
-8	routes/api.php	API routes
-9	routes/web.php	Authentication + app entry
-10	.env.example	Environment template
-11	composer.json	PHP dependencies
-12	package.json	JS dependencies
-13	README.md	Documentation
 ⚙️ Installation Guide
 1. Clone Repo
-git clone your-repo-url
-cd project-folder
+Command Type,Command
+Shell,git clone your-repo-url
+Shell,cd project-folder
 
 2. Backend Setup
-composer install
-cp .env.example .env
-php artisan key:generate
+Command Type,Command
+Shell,composer install
+Shell,cp .env.example .env
+Shell,php artisan key:generate
 
 3. Migrate
-php artisan migrate
+Command Type,Command
+Shell,php artisan migrate
 
 4. Create Admin User
-php artisan tinker
-User::factory()->create();
+Command Type,Command
+Shell,php artisan tinker
+Tinker,User::factory()->create();
+Tinker,exit
 
 5. Frontend Setup
-npm install
-npm run dev
+Command Type,Command
+Shell,npm install
+Shell,npm run dev
 
 6. Start Server
-php artisan serve
+Command Type,Command
+Shell,php artisan serve
 
 🧪 API Endpoints
 Products
-GET    /api/products
-POST   /api/products
-PUT    /api/products/{id}
-DELETE /api/products/{id}
+Method,Endpoint,Description
+GET,/api/products,Retrieve a list of all products.
+POST,/api/products,Create a new product.
+PUT,/api/products/{id},Update an existing product by ID.
+DELETE,/api/products/{id},Delete a product by ID.
 
 Sales (POS)
-POST /api/sales
-GET  /api/sales
+Method,Endpoint,Description
+POST,/api/sales,Record a new sale/transaction.
+GET,/api/sales,Retrieve a list of all sales records.
 
 Purchases
-POST /api/purchases
-GET  /api/purchases
+Method,Endpoint,Description
+POST,/api/purchases,Record a new purchase (stock inflow).
+GET,/api/purchases,Retrieve a list of all purchase records.
 
 Reports
-GET /api/reports/sales-by-date
-GET /api/reports/sales-by-date-export
-GET /api/reports/stock
-GET /api/reports/stock-export
+Method,Endpoint,Description
+GET,/api/reports/sales-by-date,Get sales report data grouped by date.
+GET,/api/reports/sales-by-date-export,"Export sales report data (e.g., as CSV/Excel)."
+GET,/api/reports/stock,Get current stock levels and summary.
+GET,/api/reports/stock-export,Export stock report data.
 
 🧱 Technical Notes
 
