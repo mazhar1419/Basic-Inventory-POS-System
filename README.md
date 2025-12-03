@@ -1,59 +1,284 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Inventory & POS System (Laravel 12 + Vue 3)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A lightweight but powerful Inventory, Purchase, POS, Customer, Supplier & Reporting System built using Laravel 12 + Vue 3.
+Includes full authentication, products, purchases, sales, damages, suppliers, customers, and reporting modules.
 
-## About Laravel
+🚀 Features
+Authentication (Manual / No Packages)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Session-based login
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Logout
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+CSRF protection
 
-## Learning Laravel
+Custom User migration, model & factory
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Vue login page
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Email: admin@mail.com
+, Password: admin123
 
-## Laravel Sponsors
+POS System
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Product search
 
-### Premium Partners
+Add to cart
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Real-time cart calculation
 
-## Contributing
+Restricts overselling
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Customer selection
 
-## Code of Conduct
+Checkout with invoice popup
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Stock auto-deduct
 
-## Security Vulnerabilities
+Products Module
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+CRUD
 
-## License
+SKU, cost price, sell price
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Stock tracking toggle
+
+Integrated with POS & Purchases
+
+Purchases Module
+
+Select supplier (required)
+
+Add multiple purchase lines
+
+Quantity increases stock
+
+Unit cost updates product cost price
+
+Purchase list with pagination
+
+Supplier relation included
+
+Customers & Suppliers
+
+Full CRUD
+
+Used in POS and Purchases
+
+Displayed in reports
+
+Damage / Write-Off
+
+Deduct damaged items
+
+Record note and qty
+
+Stock auto-updated
+
+List view and form
+
+Reports Module
+1. Sales by Date
+
+Filter by date range
+
+Group by day
+
+CSV export
+
+Fields:
+
+date
+
+sales_count
+
+total_amount
+
+total_paid
+
+2. Stock Report
+
+Product stock summary
+
+Low-stock filter
+
+CSV export
+
+3. Product-Based Reports
+
+(Recommended extension)
+
+Sales by product
+
+Purchases by product
+
+Damages by product
+
+If product not selected → show all
+
+📁 Project Structure
+resources/
+  js/
+    components/
+      InventoryApp.vue
+      products/
+      purchases/
+      pos/
+      reports/
+      customers/
+      suppliers/
+      damages/
+  views/
+    app.blade.php
+
+app/
+  Http/
+    Controllers/
+      Api/
+        ProductController.php
+        SaleController.php
+        PurchaseController.php
+        ReportController.php
+        SupplierController.php
+        CustomerController.php
+        DamageController.php
+      Auth/
+        LoginController.php
+
+  Models/
+    User.php
+    Product.php
+    Sale.php
+    SaleItem.php
+    Purchase.php
+    PurchaseItem.php
+    Supplier.php
+    Customer.php
+    Damage.php
+
+database/
+  migrations/
+  factories/
+
+🔐 Authentication Setup
+Routes
+POST /login
+POST /logout
+
+LoginController
+
+Auth::attempt()
+
+Session regeneration
+
+Logout
+
+redirect()->intended('/')
+
+User Factory
+
+Creates:
+
+email: admin@mail.com
+password: admin123
+
+
+Seed via:
+
+php artisan tinker
+User::factory()->create();
+
+⚙️ Installation
+1. Clone
+git clone your-repo-url
+cd project-folder
+
+2. Backend Install
+composer install
+cp .env.example .env
+php artisan key:generate
+
+
+Configure DB credentials.
+
+3. Migrate
+php artisan migrate
+
+4. Seed admin user
+php artisan tinker
+User::factory()->create();
+
+5. Frontend Install
+npm install
+npm run dev
+
+6. Run server
+php artisan serve
+
+🔑 Default Login
+Email	Password
+admin@mail.com
+	admin123
+🧪 API Endpoints
+Products
+GET    /api/products
+POST   /api/products
+PUT    /api/products/{id}
+DELETE /api/products/{id}
+
+Sales (POS)
+POST /api/sales
+GET  /api/sales
+
+Purchases
+POST /api/purchases
+GET  /api/purchases
+
+Reports
+GET /api/reports/sales-by-date
+GET /api/reports/sales-by-date-export
+GET /api/reports/stock
+GET /api/reports/stock-export
+
+🧱 Technical Notes
+
+No third-party auth packages used
+
+Pure Eloquent ORM
+
+Session-based authentication
+
+CSRF required for all POST requests
+
+Vue logout uses meta CSRF token
+
+Purchases increase stock
+
+Sales decrease stock
+
+Damages decrease stock
+
+Stock displayed everywhere
+
+Vue components auto-refresh after save
+
+Clean UI using basic CSS only
+
+💡 Future Improvements
+
+Role-based authorization
+
+Barcode scanner input
+
+Product images
+
+Printable POS receipts
+
+Multi-branch inventory
+
+PWA (offline mode)
+
+❤️ Credits
+
+Developed by Mazharul Islam with the support of AI assistance.
+Modular architecture, clean codebase, scalable design.
