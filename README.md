@@ -1,5 +1,5 @@
 <h1 align="center">📦 Inventory & POS System (Laravel 12 + Vue 3)</h1>
-<p align="center">A lightweight but powerful business management system built with modern Laravel + Vue.</p> <p align="center"> <a href="https://github.com/mazhar1419">GitHub</a> • <a href="https://www.linkedin.com/in/mazhar1419">LinkedIn</a> • <a href="https://www.reddit.com/user/doanldPutjonginTrump/">Reddit</a> </p>
+<p align="center">A lightweight but powerful business management system built with modern Laravel + Vue.</p> <p align="center"> <a href="github.com">GitHub</a> • <a href="www.linkedin.com">LinkedIn</a> • <a href="www.reddit.com">Reddit</a> </p>
 👋 About the Developer
 
 I'm Mazharul Islam, a full-stack developer & system builder with 5+ years of experience creating:
@@ -146,6 +146,7 @@ Purchases by product
 Damage by product
 
 📁 Project File Structure
+```
 .
 ├── app
 │   ├── Http
@@ -212,6 +213,7 @@ Damage by product
 ├── package.json
 ├── vite.config.js
 └── README.md
+```
 
 📦 File Details Table
 No.	File / Folder	Description
