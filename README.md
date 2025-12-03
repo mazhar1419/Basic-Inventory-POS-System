@@ -1,112 +1,114 @@
-Inventory & POS System (Laravel 12 + Vue 3)
+<h1 align="center">📦 Inventory & POS System (Laravel 12 + Vue 3)</h1>
+<p align="center">A lightweight but powerful business management system built with modern Laravel + Vue.</p> <p align="center"> <a href="https://github.com/mazhar1419">GitHub</a> • <a href="https://www.linkedin.com/in/mazhar1419">LinkedIn</a> • <a href="https://www.reddit.com/user/doanldPutjonginTrump/">Reddit</a> </p>
+🚀 Overview
 
-A lightweight but powerful Inventory, Purchase, POS, Customer, Supplier & Reporting System built using Laravel 12 + Vue 3.
-Includes full authentication, products, purchases, sales, damages, suppliers, customers, and reporting modules.
+This is a modern Inventory, Purchase, POS, Customer, Supplier & Reporting System crafted using Laravel 12 + Vue 3.
+Built clean, modular, scalable — suitable for small/medium business operations.
 
-🚀 Features
-Authentication (Manual / No Packages)
+Includes:
+
+✔ Authentication
+
+✔ Product & Stock Management
+
+✔ Purchases
+
+✔ Sales / POS
+
+✔ Damages
+
+✔ Suppliers & Customers
+
+✔ Reports
+
+The system is designed for real businesses, focusing on efficiency and simplicity.
+
+🔐 Authentication (Manual — No Packages)
 
 Session-based login
 
-Logout
+Custom User model, migration & factory
 
-CSRF protection
+Secure: CSRF protection, login throttling
 
-Custom User migration, model & factory
+Vue-based login page
 
-Vue login page
+Default Credentials:
 
 Email: admin@mail.com
-, Password: admin123
 
-POS System
+Password: admin123
+
+🛒 POS (Point of Sale)
 
 Product search
 
-Add to cart
+Add-to-cart with real-time calculation
 
-Real-time cart calculation
+Prevent overselling
 
-Restricts overselling
+Select customer
 
-Customer selection
+Checkout + invoice popup
 
-Checkout with invoice popup
+Auto stock deduction
 
-Stock auto-deduct
+📦 Products Module
 
-Products Module
+Full CRUD
 
-CRUD
+SKU, cost price, selling price
 
-SKU, cost price, sell price
-
-Stock tracking toggle
+Toggle stock tracking
 
 Integrated with POS & Purchases
 
-Purchases Module
+🧾 Purchases Module
 
 Select supplier (required)
 
 Add multiple purchase lines
 
-Quantity increases stock
+Stock auto-increments
 
-Unit cost updates product cost price
+Cost price auto-updates
 
-Purchase list with pagination
+Purchase listing with pagination
 
 Supplier relation included
 
-Customers & Suppliers
+👥 Customers & Suppliers
 
 Full CRUD
 
-Used in POS and Purchases
+Integrated across POS, Purchases & Reports
 
-Displayed in reports
-
-Damage / Write-Off
+❗ Damage / Write-Off
 
 Deduct damaged items
 
-Record note and qty
+Record quantity + note
 
 Stock auto-updated
 
-List view and form
-
-Reports Module
+📊 Reports Module
 1. Sales by Date
 
 Filter by date range
 
 Group by day
 
-CSV export
-
-Fields:
-
-date
-
-sales_count
-
-total_amount
-
-total_paid
+CSV export (date, sales_count, total_amount, total_paid)
 
 2. Stock Report
 
-Product stock summary
+Summary of all product stock
 
 Low-stock filter
 
 CSV export
 
-3. Product-Based Reports
-
-(Recommended extension)
+3. Product-Based Reports (recommended extension)
 
 Sales by product
 
@@ -114,7 +116,7 @@ Purchases by product
 
 Damages by product
 
-If product not selected → show all
+Show all if product not selected
 
 📁 Project Structure
 resources/
@@ -160,59 +162,31 @@ database/
   migrations/
   factories/
 
-🔐 Authentication Setup
-Routes
-POST /login
-POST /logout
-
-LoginController
-
-Auth::attempt()
-
-Session regeneration
-
-Logout
-
-redirect()->intended('/')
-
-User Factory
-
-Creates:
-
-email: admin@mail.com
-password: admin123
-
-
-Seed via:
-
-php artisan tinker
-User::factory()->create();
-
-⚙️ Installation
-1. Clone
+⚙️ Installation Guide
+1. Clone Repository
 git clone your-repo-url
 cd project-folder
 
-2. Backend Install
+2. Backend Setup
 composer install
 cp .env.example .env
 php artisan key:generate
 
 
-Configure DB credentials.
+Configure your database in .env.
 
 3. Migrate
 php artisan migrate
 
-4. Seed admin user
+4. Seed Default Admin
 php artisan tinker
 User::factory()->create();
 
-5. Frontend Install
+5. Frontend Setup
 npm install
 npm run dev
 
-6. Run server
+6. Start Server
 php artisan serve
 
 🔑 Default Login
@@ -242,15 +216,13 @@ GET /api/reports/stock-export
 
 🧱 Technical Notes
 
-No third-party auth packages used
-
 Pure Eloquent ORM
 
 Session-based authentication
 
-CSRF required for all POST requests
+No third-party auth packages
 
-Vue logout uses meta CSRF token
+CSRF protection everywhere
 
 Purchases increase stock
 
@@ -258,17 +230,15 @@ Sales decrease stock
 
 Damages decrease stock
 
-Stock displayed everywhere
+Vue components auto-refresh
 
-Vue components auto-refresh after save
-
-Clean UI using basic CSS only
+Minimal clean UI
 
 💡 Future Improvements
 
-Role-based authorization
+Role-based access
 
-Barcode scanner input
+Barcode scanner
 
 Product images
 
@@ -276,9 +246,9 @@ Printable POS receipts
 
 Multi-branch inventory
 
-PWA (offline mode)
+PWA (offline support)
 
-❤️ Credits
+❤️ Credits & Author
 
-Developed by Mazharul Islam with the support of AI assistance.
-Modular architecture, clean codebase, scalable design.
+Developed by Mazharul Islam with AI assistance.
+Clean architecture, scalable modules, and real-world usability.
