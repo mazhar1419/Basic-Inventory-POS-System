@@ -215,11 +215,26 @@ Damage by product
 └── README.md
 ```
 
-⚙️ Installation Guide
+🛠️ Installation & Setup Guide
+Follow these steps to get a development environment up and running.
+
+Prerequisites
+Ensure you have the following installed on your system:
+
+PHP (version 8.x recommended)
+
+Composer
+
+Node.js & npm
+
+Git
+
 1. Clone Repo
-Command Type,Command
-Shell,git clone your-repo-url
-Shell,cd project-folder
+# Clone the repository
+git clone your-repo-url
+
+# Navigate into the project folder
+cd project-folder
 
 2. Backend Setup
 Command Type,Command
